@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>load</title>
+	<script>
+		function $script(loads,callback){
+			var scriptEle=document.createElement('script');
+			scriptEle.src=loads;
+			document.head.appendChild(scriptEle);
+			//脚本加载完后才执行
+			scriptEle.addEventListener('load',callback);
+		}
+		$script('app.js',function(){
+			console.log(1111);
+		})
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

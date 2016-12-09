@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>异步加载库</title>
+	<!-- load.js   script.js 这两个都可以帮助我们异步的方式加载JS文件 -->
+	<script src="bower_components/script.js/dist/script.js"></script>
+	<script src="bower_components/angular-loader/angular-loader.js"></script>
+	<script>
+	
+		//$script('./bower_components/jquery/dist/jquery.js',function(){
+		//	console.log($+'kuhikhkjl ');
+		//});
+		//嵌套方法
+		/**
+		$script([
+			'./bower_components/angular/angular.js'
+			],
+			function(){
+				$script([
+					'./bower_components/angular-route/angular-route.js',
+					'./components/http.js',
+					'./movie_list/controller.js',
+					'./components/auto-focus.js',
+					'./app.js',
+					],
+					function(){
+						//console.log($+'kuhikhkjl ');
+						angular.bootstrap(document,['moviecat']);
+					});
+			});
+		****/
+		$script([
+			'./bower_components/angular/angular.js',
+			'./bower_components/angular-route/angular-route.js',
+			'./components/http.js',
+			'./movie_list/controller.js',
+			'./components/auto-focus.js',
+			'./app.js',
+			],
+			function(){
+				//console.log($+'kuhikhkjl ');
+				angular.bootstrap(document,['moviecat']);
+			});
+			
+	</script>
+</head>
+<body>
+	
+
+</body>
+</html>
